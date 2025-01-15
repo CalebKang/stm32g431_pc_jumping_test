@@ -114,18 +114,7 @@ static void MX_GPIO_Init(void)
   LL_AHB2_GRP1_EnableClock(LL_AHB2_GRP1_PERIPH_GPIOF);
 
   /**/
-  LL_GPIO_ResetOutputPin(GPIOC, LL_GPIO_PIN_14);
-
-  /**/
   LL_GPIO_ResetOutputPin(GPIOC, LL_GPIO_PIN_15);
-
-  /**/
-  GPIO_InitStruct.Pin = LL_GPIO_PIN_14;
-  GPIO_InitStruct.Mode = LL_GPIO_MODE_OUTPUT;
-  GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
-  GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
-  GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
-  LL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /**/
   GPIO_InitStruct.Pin = LL_GPIO_PIN_15;
@@ -182,7 +171,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   for(int i=0; i<8; i++)
   {
-    GPIOC->BSRR = ((GPIOC->ODR & LL_GPIO_PIN_14) << 16) | (~GPIOC->ODR & LL_GPIO_PIN_14);
+    GPIOC->BSRR = ((GPIOC->ODR & LL_GPIO_PIN_15) << 16) | (~GPIOC->ODR & LL_GPIO_PIN_15);
     for(int i=0; i<1000000; i++)
     {
       __NOP();
@@ -4666,7 +4655,7 @@ int main(void)
       }
     }
     //asm volatile("": : :"memory");
-    GPIOC->BSRR = ((GPIOC->ODR & LL_GPIO_PIN_14) << 16) | (~GPIOC->ODR & LL_GPIO_PIN_14);
+    GPIOC->BSRR = ((GPIOC->ODR & LL_GPIO_PIN_15) << 16) | (~GPIOC->ODR & LL_GPIO_PIN_15);
     for(int i=0; i<2500000; i++)
     {
       __NOP();
@@ -8624,18 +8613,7 @@ static void MX_GPIO_Init(void)
   LL_AHB2_GRP1_EnableClock(LL_AHB2_GRP1_PERIPH_GPIOF);
 
   /**/
-  LL_GPIO_ResetOutputPin(GPIOC, LL_GPIO_PIN_14);
-
-  /**/
   LL_GPIO_ResetOutputPin(GPIOC, LL_GPIO_PIN_15);
-
-  /**/
-  GPIO_InitStruct.Pin = LL_GPIO_PIN_14;
-  GPIO_InitStruct.Mode = LL_GPIO_MODE_OUTPUT;
-  GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
-  GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
-  GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
-  LL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /**/
   GPIO_InitStruct.Pin = LL_GPIO_PIN_15;
