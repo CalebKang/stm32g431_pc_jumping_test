@@ -69,7 +69,7 @@ int flag = 0;
 void NMI_Handler(void)
 {
   /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
-  LL_GPIO_SetOutputPin(GPIOC, LL_GPIO_PIN_14 | LL_GPIO_PIN_15);
+  LL_GPIO_SetOutputPin(GPIOC, LL_GPIO_PIN_15);
   /* USER CODE END NonMaskableInt_IRQn 0 */
   /* USER CODE BEGIN NonMaskableInt_IRQn 1 */
    while (1)
@@ -108,7 +108,7 @@ void HardFault_Handler(void)
 void MemManage_Handler(void)
 {
   /* USER CODE BEGIN MemoryManagement_IRQn 0 */
-  LL_GPIO_SetOutputPin(GPIOC, LL_GPIO_PIN_14 | LL_GPIO_PIN_15);
+  LL_GPIO_SetOutputPin(GPIOC, LL_GPIO_PIN_15);
   /* USER CODE END MemoryManagement_IRQn 0 */
   while (1)
   {
@@ -123,7 +123,7 @@ void MemManage_Handler(void)
 void BusFault_Handler(void)
 {
   /* USER CODE BEGIN BusFault_IRQn 0 */
-  LL_GPIO_SetOutputPin(GPIOC, LL_GPIO_PIN_14 | LL_GPIO_PIN_15);
+  LL_GPIO_SetOutputPin(GPIOC, LL_GPIO_PIN_15);
   /* USER CODE END BusFault_IRQn 0 */
   while (1)
   {
@@ -138,7 +138,7 @@ void BusFault_Handler(void)
 void UsageFault_Handler(void)
 {
   /* USER CODE BEGIN UsageFault_IRQn 0 */
-  LL_GPIO_SetOutputPin(GPIOC, LL_GPIO_PIN_14 | LL_GPIO_PIN_15);
+  LL_GPIO_SetOutputPin(GPIOC, LL_GPIO_PIN_15);
   /* USER CODE END UsageFault_IRQn 0 */
   while (1)
   {
@@ -155,7 +155,6 @@ void SVC_Handler(void)
   /* USER CODE BEGIN SVCall_IRQn 0 */
   while (1)
   {
-    LL_GPIO_TogglePin(GPIOC, LL_GPIO_PIN_14);
     LL_GPIO_TogglePin(GPIOC, LL_GPIO_PIN_15);
     for(int i=0; i<1000000; i++)
     {
